@@ -1,0 +1,42 @@
+<div class="info">
+  <div>Name:<span>{{person.name}}</span></div>
+  <div>Height:<span>{{person.height}}</span></div>
+  <div>Mass:<span>{{person.mass}}</span></div>
+  <div>Hair color:<span>{{person.hair_color}}</span></div>
+  <div>Eye color:<span>{{person.eye_color}}</span></div>
+  <div>Skin color:<span>{{person.skin_color}}</span></div>
+  <div>Birth year:<span>{{person.birth_year}}</span></div>
+  <div>Gender:<span>{{person.gender}}</span></div>
+  <div>
+    Films:
+    <a
+      [routerLink]="['/films/'+film.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let film of person.films">
+      {{film.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+  <div>
+    Species:
+    <a
+      [routerLink]="['/species/'+specie.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let specie of person.species">
+      {{specie.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+  <div>
+    Vehicles:
+    <a
+      [routerLink]="['/vehicles/'+vehicle.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let vehicle of person.vehicles">
+      {{vehicle.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+  <div>
+    Starships:
+    <a
+      [routerLink]="['/starship/'+starship.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let starship of person.starships">
+      {{starship.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+</div>

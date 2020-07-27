@@ -1,0 +1,24 @@
+<div class="info">
+  <div>Name: <span>{{spaceship.name }}</span></div>
+  <div>Model:<span>{{spaceship.model }}</span></div>
+  <div>Manufacturer:<span>{{spaceship.manufacturer }}</span></div>
+  <div>Cost in credits:<span>{{spaceship.cost_in_credits }}</span></div>
+  <div>Length:<span>{{spaceship.length }}</span></div>
+  <div>Max atmosphering speed:<span>{{spaceship.max_atmosphering_speed }}</span></div>
+  <div>Crew:<span>{{spaceship.crew }}</span></div>
+  <div>Passenger:<span>{{spaceship.passengers }}</span></div>
+  <div>Cargo capacity:<span>{{spaceship.cargo_capacity }}</span></div>
+  <div>Consumables:<span>{{spaceship.consumables }}</span></div>
+  <div>Hyperdrive rating:<span>{{spaceship.hyperdrive_rating }}</span></div>
+  <div>MGLT:<span>{{spaceship.MGLT }}</span></div>
+  <div>Starship class:<span>{{spaceship.starship_class }}</span></div>
+  <div>Pilots:<span>{{spaceship.pilots }}</span></div>
+  <div>
+    Films:
+    <a
+      [routerLink]="['/films/'+film.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let film of spaceship.films">
+      {{film.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+</div>

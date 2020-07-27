@@ -1,1 +1,14 @@
-<p>people works!</p>
+<div>
+  <mat-form-field class="width-100 m-3">
+    <input
+      matInput
+      placeholder="Search"
+      (keyup)="keyUpEventSubject.next($event)">
+    <mat-icon matSuffix>
+      search
+    </mat-icon>
+  </mat-form-field>
+</div>
+<mat-card class="m-3" *ngFor="let person of people">
+  <a  [routerLink]="[person.id]">{{ person.name }}</a>
+</mat-card>

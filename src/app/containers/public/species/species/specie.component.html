@@ -1,0 +1,19 @@
+<div class="info">
+  <div>Name: <span>{{species.name }}</span></div>
+  <div>Classification: <span>{{species.classification }}</span></div>
+  <div>Designation:<span>{{species.designation }}</span></div>
+  <div>Average height: <span>{{species.average_height }}</span></div>
+  <div>Skin color: <span>{{species.skin_colors }}</span></div>
+  <div>Hair color: <span>{{species.hair_colors }}</span></div>
+  <div>Eye color: <span>{{species.eye_colors }}</span></div>
+  <div>Average lifespan: <span>{{species.average_lifespan }}</span></div>
+  <div>language: <span>{{species.language }}</span></div>
+  <div>
+    Peoples:
+    <a
+      *ngFor="let character of species.people"
+      [routerLink]="['/peoples/'+character.match('[-]?[0-9]+(.[0-9]+)?')[0]]">
+      {{character.match('[-]?[0-9]+(.[0-9]+)?')[0] }},
+    </a>
+  </div>
+</div>

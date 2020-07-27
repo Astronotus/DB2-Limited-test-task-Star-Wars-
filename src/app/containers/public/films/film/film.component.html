@@ -1,0 +1,47 @@
+<div class="info">
+  <div>Title: <span>{{film.title }}</span></div>
+  <div>Director: <span>{{ film.director }}</span></div>
+  <div>Producer: <span>{{ film.producer }}</span></div>
+  <div>Realease Date: <span>{{film.release_date }}</span></div>
+  <div>Opening Crawl: <span>{{film.opening_crawl}}</span></div>
+  <div>
+    Characters:
+    <a
+      *ngFor="let character of film.characters"
+      [routerLink]="['/peoples/'+character.match('[-]?[0-9]+(.[0-9]+)?')[0]]">
+      {{character.match('[-]?[0-9]+(.[0-9]+)?')[0] }},
+    </a>
+  </div>
+  <div>
+    Planets:
+    <a
+      [routerLink]="['/planets/'+planet.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let planet of film.planets">
+      {{planet.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+  <div>
+    Species:
+    <a
+      [routerLink]="['/species/'+specie.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let specie of film.species">
+      {{specie.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+  <div>
+    Starships:
+    <a
+      [routerLink]="['/starship/'+starship.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let starship of film.starships">
+      {{starship.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+  <div>
+    Vehicles:
+    <a
+      [routerLink]="['/vehicles/'+vehicle.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let vehicle of film.vehicles">
+      {{vehicle.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+</div>

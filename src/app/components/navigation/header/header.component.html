@@ -1,1 +1,20 @@
-<p>header works!</p>
+<div
+  class="header"
+  fxFlex
+  fxLayout
+  fxLayoutAlign="flex-start">
+  <ul
+    class="nav-items"
+    fxLayout
+    fxLayoutGap="40px">
+    <li *ngFor="let menuItem of menu">
+      <a
+        class="nav-item link"
+        routerLinkActive="active"
+        [routerLink]="menuItem.route"
+        [routerLinkActiveOptions]="menuItem.route === '/' ? { exact: true } : { exact: false }">
+        {{menuItem.title}}
+      </a>
+    </li>
+  </ul>
+</div>

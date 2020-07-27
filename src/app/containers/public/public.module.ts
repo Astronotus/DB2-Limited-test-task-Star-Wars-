@@ -3,14 +3,14 @@ import { MaterialModule } from '@core/material/material.module';
 import { PublicComponent } from '@public/public.component';
 import { CommonModule } from '@angular/common';
 import { PublicRouting } from '@public/public.routing';
-import { HeaderComponent } from '@components/navigation/header/header.component';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
-    PublicRouting
+    PublicRouting,
+    FlexModule
   ],
-  declarations: [ PublicComponent, HeaderComponent ]
+  declarations: [ PublicComponent ]
 })
 export class PublicModule {}

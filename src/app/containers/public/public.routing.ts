@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PublicComponent } from '@public/public.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: PublicComponent
+  },
+  {
+    path: 'films',
     loadChildren: () => import('./films/films.module').then(m => m.FilmsModule)
   },
   {
@@ -20,7 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'starships',
-    loadChildren: () => import('./starships/starships.module').then(m => m.StarshipsModule)
+    loadChildren: () => import('./spaceships/spaceships.module').then(m => m.SpaceshipsModule)
+  },
+  {
+    path: 'vehicles',
+    loadChildren: () => import('./vehicles/vehicles.module').then(m => m.VehiclesModule)
   }
 ];
 

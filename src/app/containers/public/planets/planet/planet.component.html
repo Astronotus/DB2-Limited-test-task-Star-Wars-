@@ -1,0 +1,27 @@
+<div class="info">
+  <div>Name: <span>{{planet.name}}</span></div>
+  <div>Rotation period:<span>{{planet.rotation_period}}</span></div>
+  <div>Orbital period:<span>{{planet.orbital_period}}</span></div>
+  <div>Diameter:<span>{{planet.diameter}}</span></div>
+  <div>Climate:<span>{{planet.climate}}</span></div>
+  <div>Gravity:<span>{{planet.gravity}}</span></div>
+  <div>Terrain:<span>{{planet.terrain}}</span></div>
+  <div>Surface water:<span>{{planet.surface_water}}</span></div>
+  <div>Population:<span>{{planet.population}}</span></div>
+  <div>
+    Characters:
+    <a
+      *ngFor="let resident of planet.residents"
+      [routerLink]="['/peoples/'+resident.match('[-]?[0-9]+(.[0-9]+)?')[0]]">
+      {{resident.match('[-]?[0-9]+(.[0-9]+)?')[0] }},
+    </a>
+  </div>
+  <div>
+    Films:
+    <a
+      [routerLink]="['/films/'+film.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let film of planet.films">
+      {{film.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+</div>

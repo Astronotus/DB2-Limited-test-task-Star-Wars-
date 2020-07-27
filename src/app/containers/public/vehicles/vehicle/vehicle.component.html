@@ -1,0 +1,29 @@
+<div class="info">
+  <div>Name: <span>{{vehicle.name}}</span></div>
+  <div>Model: <span>{{vehicle.model }}</span></div>
+  <div>Manufacturer: <span>{{vehicle.manufacturer }}</span></div>
+  <div>Cost in credits: <span>{{vehicle.cost_in_credits }}</span></div>
+  <div>Length: <span>{{vehicle.length }}</span></div>
+  <div>Max atmosphering speed: <span>{{vehicle.max_atmosphering_speed }}</span></div>
+  <div>Crew: <span>{{vehicle.crew }}</span></div>
+  <div>Passenger: <span>{{vehicle.passengers }}</span></div>
+  <div>Cargo capacity: <span>{{vehicle.cargo_capacity }}</span></div>
+  <div>Consumables: <span>{{vehicle.consumables }}</span></div>
+  <div>Vehicle class: <span>{{vehicle.vehicle_class }}</span></div>
+  <div>
+    Pilots:
+    <a
+      *ngFor="let pilot of vehicle.pilots"
+      [routerLink]="['/peoples/'+pilot.match('[-]?[0-9]+(.[0-9]+)?')[0]]">
+      {{pilot.match('[-]?[0-9]+(.[0-9]+)?')[0] }},
+    </a>
+  </div>
+  <div>
+    Films:
+    <a
+      [routerLink]="['/films/'+film.match('[-]?[0-9]+(.[0-9]+)?')[0]]"
+      *ngFor="let film of vehicle.films">
+      {{film.match('[-]?[0-9]+(.[0-9]+)?')[0]}} ,
+    </a>
+  </div>
+</div>
